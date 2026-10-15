@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="../PlayerEntity/PlayerEntity.csproj" Id="8b744e61-cbce-44e4-a55e-698b7e98f514" />
   <Project Path="SGame.csproj" />
 </Solution>

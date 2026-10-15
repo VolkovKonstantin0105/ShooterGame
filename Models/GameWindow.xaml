@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:SGame.Models"
         xmlns:wpf="clr-namespace:MonoGame.Framework.WpfInterop;assembly=MonoGame.Framework.WpfInterop"
         mc:Ignorable="d"
-        Title="ShooterGame" Height="420" Width="640" WindowStartupLocation="CenterScreen">
+        Title="ShooterGame" Height="420" Width="640" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid x:Name="GameHost"  />
+    
 </Window>

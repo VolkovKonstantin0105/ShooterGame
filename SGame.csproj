@@ -9,8 +9,124 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="..\..\..\GameSprites\2D Pixel Dungeon Asset Pack v2.0\2D Pixel Dungeon Asset Pack\items and trap_animation\chest\chest_1.png" Link="Content\Texture\ChestTextures\chest_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\GameSprites\2D Pixel Dungeon Asset Pack v2.0\2D Pixel Dungeon Asset Pack\items and trap_animation\chest\chest_2.png" Link="Content\Texture\ChestTextures\chest_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\GameSprites\2D Pixel Dungeon Asset Pack v2.0\2D Pixel Dungeon Asset Pack\items and trap_animation\chest\chest_3.png" Link="Content\Texture\ChestTextures\chest_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\GameSprites\2D Pixel Dungeon Asset Pack v2.0\2D Pixel Dungeon Asset Pack\items and trap_animation\chest\chest_4.png" Link="Content\Texture\ChestTextures\chest_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\GameSprites\2D Pixel Dungeon Asset Pack v2.0\2D Pixel Dungeon Asset Pack\items and trap_animation\chest\chest_open_1.png" Link="Content\Texture\ChestTextures\chest_open_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\GameSprites\2D Pixel Dungeon Asset Pack v2.0\2D Pixel Dungeon Asset Pack\items and trap_animation\chest\chest_open_2.png" Link="Content\Texture\ChestTextures\chest_open_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\GameSprites\2D Pixel Dungeon Asset Pack v2.0\2D Pixel Dungeon Asset Pack\items and trap_animation\chest\chest_open_3.png" Link="Content\Texture\ChestTextures\chest_open_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\GameSprites\2D Pixel Dungeon Asset Pack v2.0\2D Pixel Dungeon Asset Pack\items and trap_animation\chest\chest_open_4.png" Link="Content\Texture\ChestTextures\chest_open_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.9" />
     <PackageReference Include="MonoGame.Framework.WpfInterop" Version="1.9.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PlayerEntity\PlayerEntity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Content\Texture\AmmoTexture\Just_arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Coins\coin_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Coins\coin_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Coins\coin_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Coins\coin_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Enemy\skull_v2_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Enemy\skull_v2_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Enemy\skull_v2_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Enemy\skull_v2_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\PlayerAttack\priest3_v1_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\PlayerAttack\priest3_v1_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\PlayerAttack\priest3_v1_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\PlayerAttack\priest3_v1_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\PlayerDamage\priest2_v2_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\PlayerDamage\priest2_v2_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\PlayerDamage\priest2_v2_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\PlayerDamage\priest2_v2_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\priest1_v1_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\priest1_v1_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\priest1_v1_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\priest1_v1_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Vampir\vampire_v2_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Vampir\vampire_v2_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Vampir\vampire_v2_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Vampir\vampire_v2_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Content\Texture\ChestTextures\" />
   </ItemGroup>
 
 </Project>

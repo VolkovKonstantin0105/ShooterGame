@@ -1,0 +1,66 @@
+﻿<Window x:Class="SGame.GameOverWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="380" Height="240" WindowStartupLocation="CenterOwner"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        ResizeMode="NoResize" ShowInTaskbar="False">
+
+    <Window.Resources>
+        <Style x:Key="OkButton" TargetType="Button">
+            <Setter Property="Foreground" Value="#FFF3D6"/>
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Height" Value="44"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border Background="#0F2410" Margin="0,4,0,0"/>
+                            <Border x:Name="Outer" Background="#0F2410" BorderBrush="#0F2410"
+                                    BorderThickness="3" Margin="0,0,0,4">
+                                <Border x:Name="Inner" Background="#3E8E41"
+                                        BorderBrush="#7BD67E" BorderThickness="2,2,0,0">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"/>
+                                </Border>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Inner" Property="Background" Value="#4FAE53"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Outer" Property="Margin" Value="0,4,0,0"/>
+                                <Setter TargetName="Inner" Property="Background" Value="#2D6E30"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border Background="#F0140C06" BorderBrush="#1A0F08" BorderThickness="4" Margin="10">
+        <Border.Effect>
+            <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="20" Opacity="0.8"/>
+        </Border.Effect>
+
+        <StackPanel VerticalAlignment="Center" Margin="25">
+            <TextBlock x:Name="TitleText" Text="ВЫ ПОГИБЛИ" HorizontalAlignment="Center"
+                       FontFamily="Consolas" FontSize="32" FontWeight="ExtraBold"
+                       Foreground="#E0443A">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="#1A0F08" ShadowDepth="3" BlurRadius="0" Direction="315"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <TextBlock x:Name="MessageText" Margin="0,12,0,20" HorizontalAlignment="Center"
+                       FontFamily="Consolas" FontSize="16" Foreground="#FFF3D6"
+                       TextWrapping="Wrap" TextAlignment="Center"/>
+
+            <Button Content="ОК" Style="{StaticResource OkButton}" Width="200" Click="Ok_Click"/>
+        </StackPanel>
+    </Border>
+</Window>
