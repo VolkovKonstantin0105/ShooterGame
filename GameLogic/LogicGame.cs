@@ -14,7 +14,8 @@ namespace SGame.GameLogic
         private bool _wasMousePressed = false; //была ли нажата кнопка 
         public const int SPEED_VAMPIR_BEFORE_DAMAGE = 1;
         public const int MIN_DISTANCE = 48;
-        private PlayerEntity.PlayerEntity _playerEntity;
+        private SGame.ViewModels.PlayerEntity _playerEntity; 
+        
         private Player _currentPlayer;
         private SpriteBatch _spriteBatch;
         private FactoryPerson _factoryPerson;
@@ -36,7 +37,7 @@ namespace SGame.GameLogic
             _spriteBatch = spriteBatch;
             _graphicsDevice = graphicsDevice;
             _factoryPerson = new FactoryPerson(_graphicsDevice);
-            _playerEntity = new PlayerEntity.PlayerEntity();
+            _playerEntity = new SGame.ViewModels.PlayerEntity();
 
             _obstacles = new()
             {
