@@ -128,8 +128,7 @@ namespace SGame.Models.Enemy
             {
                 _isBite = true;
                 _poison.Start();
-            }
-           
+            }  
         }
 
         //вынести потом метод

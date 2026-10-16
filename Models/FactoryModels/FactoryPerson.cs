@@ -81,6 +81,13 @@ namespace SGame.Models.FactoryModels
             return new Chest(new Vector2(CHEST_X_POSITION, CHEST_Y_POSITION), chestTextures);
         }
 
+        public Older GenerateOlder()
+        {
+            string path = "Content/Texture/Older/older_";
+            Texture2D[] olderTexture = GenerateArrayTextures(path, 2);
+            return new Older(olderTexture, new Vector2(150, 150), _graphicsDevice);
+        }
+
         private Texture2D[] GenerateArrayTextures(string path, int countPictures)
         {
             var textures = new Texture2D[countPictures];
