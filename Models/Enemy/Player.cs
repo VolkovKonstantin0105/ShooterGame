@@ -20,7 +20,8 @@ namespace SGame.Models.Enemy
         private bool _canShoot = true;
         private FactoryPerson _factory;
         private Texture2D[] _attackTextures;
-        private Texture2D[] _defaultTextures;
+        private Texture2D[] _defaultRightTextures;
+        private Texture2D[] _defaultLeftTectures;
         private Texture2D[] _damageTexture;
         private bool _isAttacking;
         private List<Obstacle> _obstacles;
@@ -36,17 +37,20 @@ namespace SGame.Models.Enemy
         public bool IsPressedB { get; set; }
         public bool IsKeyFound { get; set; }
         public bool IsInLake { get; set; }
-        public Player(Texture2D[] textures, Vector2 point, GraphicsDevice graphicsDevice, Texture2D[] attackTextures, Texture2D[] damageTexture) : base(textures[0], point)
+        private string _direction;
+        public Player(Texture2D[] texturesR, Vector2 point, GraphicsDevice graphicsDevice, Texture2D[] attackTextures, Texture2D[] damageTexture, Texture2D[] texturesL) : base(texturesR[0], point)
         {
             _speed = 2;
             _tag = "player";
             _currentPoint = point;
-            _texture = textures[0];
-            _animationTextures = textures;
+            _texture = texturesR[0];
+            _animationTextures = texturesR;
             _factory = new FactoryPerson(graphicsDevice);
             _attackTextures = attackTextures;
-            _defaultTextures = textures;
+            _defaultRightTextures = texturesR;
+            _defaultLeftTectures = texturesL;
             _damageTexture = damageTexture;
+            _direction = "right"; //по умолчанию вправо направление
         }
         public override void Move(WpfKeyboard keyboard)
         {
@@ -72,7 +76,8 @@ namespace SGame.Models.Enemy
                 {
                     Keys.A, () =>
                     {
-                         Vector2 newPos = new Vector2(_currentPoint.X - _speed, _currentPoint.Y);
+                        SetDirection("left");
+                        Vector2 newPos = new Vector2(_currentPoint.X - _speed, _currentPoint.Y);
                         if (_currentPoint.X > 0 && CanMove(newPos))
                             _currentPoint.X -= _speed;
                     }
@@ -80,7 +85,8 @@ namespace SGame.Models.Enemy
                 {
                     Keys.D, () =>
                     {
-                         Vector2 newPos = new Vector2(_currentPoint.X + _speed, _currentPoint.Y);
+                        SetDirection("right");
+                        Vector2 newPos = new Vector2(_currentPoint.X + _speed, _currentPoint.Y);
                         if (_currentPoint.X <= 595 && CanMove(newPos))
                             _currentPoint.X += _speed;
                     }
@@ -185,8 +191,17 @@ namespace SGame.Models.Enemy
             {
                 _isAttacking = false;
                 _currentFrame = 0;
-                textures = _defaultTextures;
-                _texture = _defaultTextures[0];
+                if (_direction == "right")
+                {
+                    textures = _defaultRightTextures;
+                    _texture = _defaultRightTextures[0];
+                }
+                else if (_direction == "left")
+                {
+                    textures = _defaultLeftTectures;
+                    _texture = _defaultLeftTectures[0];
+                }
+               
                 return;
             }
             _texture = textures[_currentFrame];
@@ -214,5 +229,20 @@ namespace SGame.Models.Enemy
                 
         }
         public bool IsDiedValue() => _isDied;
+        private void SetDirection(string direction)
+        {
+            if (_direction == direction)
+                return;
+
+            _direction = direction;
+            _animationTextures = direction == "left"
+                ? _defaultLeftTectures
+                : _defaultRightTextures;
+
+            _currentFrame = 0;
+
+            if (!_isAttacking)
+                _texture = _animationTextures[0];
+        }
     }
 }

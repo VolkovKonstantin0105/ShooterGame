@@ -48,7 +48,10 @@ namespace SGame.Models.FactoryModels
             Texture2D[] damageTextures =
                 GenerateArrayTextures("Content/Texture/PlayerDamage/priest2_v2_", SPRITE_COUNT_FRAME);
 
-            return new Player(playerTextures, Vector2.Zero, _graphicsDevice, attackTextures, damageTextures);
+            Texture2D[] playerLeftTextures = GenerateArrayTextures("Content/Texture/PlayerLeftTextures/priest2_vL_", SPRITE_COUNT_FRAME);
+
+
+            return new Player(playerTextures, Vector2.Zero, _graphicsDevice, attackTextures, damageTextures, playerLeftTextures);
         }
         public Employee GenerateEmployee()
         {

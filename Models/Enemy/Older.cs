@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Framework.WpfInterop.Input;
-using SGame.Models.FactoryModels;
-
 namespace SGame.Models.Enemy
 {
     //класс старца, который просто стоит на месте и разговаривает с персонажем
@@ -16,10 +10,10 @@ namespace SGame.Models.Enemy
         private Vector2 _olderPoint;
         public Older(Texture2D[] textures, Vector2 point, GraphicsDevice graphicsDevice) : base(textures[0], point)
         {
-            _speed = 2;
-            _damage = 12; //самый высокий
-            _tag = "vampir";
-            _olderPoint = point; //определяем появление игрока пока что вначале координат
+            _speed = 1;
+            _damage = 0; 
+            _tag = "older";
+            _olderPoint = point; 
             _texture = textures[0];
             _animationTextures = textures;
             _graphicDevice = graphicsDevice;
