@@ -40,7 +40,7 @@ namespace SGame.Models.FactoryModels
         public Player GeneratePlayer()
         {
             Texture2D[] playerTextures =
-                GenerateArrayTextures("Content/Texture/priest1_v1_", SPRITE_COUNT_FRAME);
+                GenerateArrayTextures("Content/Texture/PlayerRightTextures/priest1_v1_", SPRITE_COUNT_FRAME);
 
             Texture2D[] attackTextures =
                 GenerateArrayTextures("Content/Texture/PlayerAttack/priest3_v1_", SPRITE_COUNT_FRAME);
@@ -88,7 +88,7 @@ namespace SGame.Models.FactoryModels
         {
             string path = "Content/Texture/Older/older_";
             Texture2D[] olderTexture = GenerateArrayTextures(path, 2);
-            return new Older(olderTexture, new Vector2(150, 150), _graphicsDevice);
+            return new Older(olderTexture, new Vector2(340, 243), _graphicsDevice);
         }
 
         private Texture2D[] GenerateArrayTextures(string path, int countPictures)

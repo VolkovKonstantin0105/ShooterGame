@@ -113,16 +113,16 @@
     <None Update="Content\Texture\PlayerLeftTextures\priest2_vL_4.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Content\Texture\priest1_v1_1.png">
+    <None Update="Content\Texture\PlayerRightTextures\priest1_v1_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Content\Texture\priest1_v1_2.png">
+    <None Update="Content\Texture\PlayerRightTextures\priest1_v1_2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Content\Texture\priest1_v1_3.png">
+    <None Update="Content\Texture\PlayerRightTextures\priest1_v1_3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Content\Texture\priest1_v1_4.png">
+    <None Update="Content\Texture\PlayerRightTextures\priest1_v1_4.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Content\Texture\Vampir\vampire_v2_1.png">

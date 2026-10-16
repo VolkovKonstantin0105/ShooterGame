@@ -11,6 +11,7 @@ namespace SGame.Models.GameObject
         private Texture2D _textureBullet { get; set; } //текстура пули
         
         private Vector2 _currentPoint; //текущее положение пули
+        public Vector2 Direction { get; set; } = new Vector2(1, 0);
 
         public Bullet(Texture2D texture, Vector2 point)
         {
