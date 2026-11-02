@@ -34,6 +34,7 @@ namespace FifaFootballGame.Models.GamePresentWindowFolder.GameFolder
         private Employee _employee { get; set; }
         private Vampir _vampir { get; set; }
         private Older _older { get; set; } //старец
+        private List<Scelet> _scelets;
         
         //лист монет
         List<Coins> _listCoins;
@@ -77,6 +78,10 @@ namespace FifaFootballGame.Models.GamePresentWindowFolder.GameFolder
                 ExceptionDataBase(); //база данных
                 _listCoins = _logic.GenerateCoins();//метод для генерации монет в рандомном месте
 
+                //доработать
+                _scelets = _logic.GenerateListSkelets();
+
+
                 _key = new Key();
                 _older = _factory.GenerateOlder();
 
@@ -111,6 +116,11 @@ namespace FifaFootballGame.Models.GamePresentWindowFolder.GameFolder
 
                 _chest.Draw(_spriteBatch);
                 _older.Draw(_spriteBatch);
+
+                foreach (var skelet in _scelets)
+                {
+                    skelet.Draw(_spriteBatch);
+                }
 
                 _spriteBatch.End();
             }
@@ -147,7 +157,16 @@ namespace FifaFootballGame.Models.GamePresentWindowFolder.GameFolder
             _logic.AttackVampir(_player, _vampir, gameTime);
             _logic.BulletDamage(_vampir);
             _logic.MouseClick(_mouse, _key);
+
             _older.UpdateAnimation(gameTime);
+
+            _logic.UpdateSpawnScelet(_scelets);
+
+            foreach (var skelet in _scelets)
+            {
+                skelet.UpdateAnimation(gameTime);
+            }
+
             try
             {
                 _logic.OpenChest(_chest, gameTime, _key);

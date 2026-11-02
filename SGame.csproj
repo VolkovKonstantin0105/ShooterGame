@@ -125,6 +125,18 @@
     <None Update="Content\Texture\PlayerRightTextures\priest1_v1_4.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Content\Texture\Scelet\SceletRightTextures\skeleton2_v2_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Scelet\SceletRightTextures\skeleton2_v2_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Scelet\SceletRightTextures\skeleton2_v2_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\Texture\Scelet\SceletRightTextures\skeleton2_v2_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Content\Texture\Vampir\vampire_v2_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -141,6 +153,8 @@
 
   <ItemGroup>
     <Folder Include="Content\Texture\ChestTextures\" />
+    <Folder Include="Content\Texture\Scelet\SceletLeftTextures\" />
+    <Folder Include="Content\Texture\Scelet\SceletAttactTextures\" />
   </ItemGroup>
 
 </Project>

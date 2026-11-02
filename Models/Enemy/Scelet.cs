@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Framework.WpfInterop.Input;
+using SharpDX.Direct2D1;
 
 namespace SGame.Models.Enemy
 {
@@ -10,16 +11,26 @@ namespace SGame.Models.Enemy
     /// </summary>
     public class Scelet : Enemys
     {
-        public Scelet(Texture2D[] textures, Vector2 point) : base(textures, point)
+        private Player _player;
+        
+        public Scelet(Texture2D[] textures, Vector2 point, Player player) : base(textures, point)
         {
             _speed = 1;
             _tag = "scelet";
+            _player = player;
+            _animationTextures = textures;
         }
 
         public override void Move(WpfKeyboard keyboard)
         {
-            // TODO: логика скелета (можно взять Patrol() и ChasePlayer(позиция игрока))
-            throw new NotImplementedException();
+            if (IsSeePlayer)
+                ChasePlayer(_player.GetPosition());
+            else
+                Patrol();
         }
+
+
+
+        
     }
 }

@@ -91,6 +91,15 @@ namespace SGame.Models.FactoryModels
             return new Older(olderTexture, new Vector2(340, 243), _graphicsDevice);
         }
 
+        public Scelet GenerateScelet(Vector2[] points, Player player)
+        {
+            string pathRigthAnimation = "Content/Texture/Scelet/SceletRightTextures/skeleton2_v2_";
+            //string debug = "Content/Texture/Older/older_";
+            Texture2D[] sceletRightTextures = GenerateArrayTextures(pathRigthAnimation, SPRITE_COUNT_FRAME);
+            //Texture2D[] debugTextures = GenerateArrayTextures(debug, 2);
+            return new Scelet(sceletRightTextures, points[0], player);
+        }
+
         private Texture2D[] GenerateArrayTextures(string path, int countPictures)
         {
             var textures = new Texture2D[countPictures];
@@ -101,5 +110,7 @@ namespace SGame.Models.FactoryModels
             }
             return textures;
         }
+
+
     }
 }

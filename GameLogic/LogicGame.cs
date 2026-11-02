@@ -11,11 +11,11 @@ namespace SGame.GameLogic
 {
     public sealed class LogicGame
     {
+        private const int COUNT_SCELETS = 3;
         private bool _wasMousePressed = false; //была ли нажата кнопка 
         public const int SPEED_VAMPIR_BEFORE_DAMAGE = 1;
         public const int MIN_DISTANCE = 48;
         private SGame.ViewModels.PlayerEntity _playerEntity; 
-        
         private Player _currentPlayer;
         private SpriteBatch _spriteBatch;
         private FactoryPerson _factoryPerson;
@@ -25,9 +25,8 @@ namespace SGame.GameLogic
         public List<Obstacle> obstacles => _obstacles;
         private WaterModel _leftLake;
         private WaterModel _rightLake;
-
         private bool _playerInLake = false;
-
+        private LogicGenerateSkelet _logicGS;
 
         //для тестовых MessageBox
         private bool _shown = true;
@@ -36,8 +35,10 @@ namespace SGame.GameLogic
             _currentPlayer = player;
             _spriteBatch = spriteBatch;
             _graphicsDevice = graphicsDevice;
+            _logicGS = new();
             _factoryPerson = new FactoryPerson(_graphicsDevice);
             _playerEntity = new SGame.ViewModels.PlayerEntity();
+            
 
             _obstacles = new()
             {
@@ -228,6 +229,38 @@ namespace SGame.GameLogic
             }
             _wasMousePressed = isPressed;
         }
-        
+        public bool UpdateScelets(List<Scelet> scelets)
+        {
+            if (scelets.Count < COUNT_SCELETS)
+                return true;
+            else
+                return false;
+        }
+        public void UpdateSpawnScelet(List<Scelet> scelets)
+        {
+            if (UpdateScelets(scelets))
+            {
+                for (int i = scelets.Count; i < COUNT_SCELETS; i++)
+                {
+                    Vector2[] roures = _logicGS.GenerateSkeletRoute();
+                    var skelet = _factoryPerson.GenerateScelet(roures, _currentPlayer);
+                    scelets.Add(skelet);
+                }
+            }
+            else
+                return;
+        }
+
+        public List<Scelet> GenerateListSkelets()
+        {
+            List<Scelet> scelets = new List<Scelet>(3);
+            for (int i = 0; i < COUNT_SCELETS; i++)
+            {
+                Vector2[] roures = _logicGS.GenerateSkeletRoute();
+                var skelet = _factoryPerson.GenerateScelet(roures, _currentPlayer);
+                scelets.Add(skelet);
+            }
+            return scelets;
+        }
     }
 }
